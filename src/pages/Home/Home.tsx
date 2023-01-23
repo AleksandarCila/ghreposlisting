@@ -1,4 +1,4 @@
-import { Tabs } from "../../components";
+import { RepoList, Tabs } from "../../components";
 
 export const Home = () => {
   return (
@@ -10,12 +10,15 @@ export const Home = () => {
 
         <Tabs.Panel label="react">
           React
+          <RepoList apiUrl="https://api.github.com/search/repositories?q=React" />
         </Tabs.Panel>
         <Tabs.Panel label="vue">
           Vue
+          <RepoList apiUrl="https://api.github.com/search/repositories?q=Vue" />
         </Tabs.Panel>
         <Tabs.Panel label="angular">
           Angular
+          <RepoList apiUrl="https://api.github.com/search/repositories?q=Angular" />
         </Tabs.Panel>
       </Tabs>
     </div>
