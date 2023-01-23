@@ -1,11 +1,12 @@
 import { FC } from "react";
 
 import { RepoList } from "../RepoList";
+import { SortForm } from "../SortForm";
 
 import { useFetchRepositoryList } from "./hooks";
 import { Pagination } from "../../generic";
 
-import { RepoPanelProps } from "./types";
+import { RepoPanelProps, RepoPanelQueryState } from "./types";
 
 export const RepoPanel: FC<RepoPanelProps> = ({ apiUrl }) => {
   const { repoListData, loading, error, queryState, setQueryState } =
@@ -15,12 +16,15 @@ export const RepoPanel: FC<RepoPanelProps> = ({ apiUrl }) => {
     setQueryState((prev) => ({ ...prev, page: prev.page + pageIncrease }));
   };
 
-  if (loading) return <div>Loading...</div>;
+  const handleSortChange = (newSort: RepoPanelQueryState["sort"]) => {
+    setQueryState((prev) => ({ ...prev, sort: newSort }));
+  };
 
-  if (error) return <div>{error.toString()}</div>;
+  
   return (
     <div>
-      {repoListData && <RepoList data={repoListData} />}
+      <SortForm sort={queryState.sort} onChange={handleSortChange} />
+      <RepoList data={repoListData} error={error} loading={loading} />
 
       <Pagination
         currPage={queryState.page}
