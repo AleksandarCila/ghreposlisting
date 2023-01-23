@@ -1,23 +1,33 @@
-import { FC, useMemo } from "react";
+import { FC } from "react";
 
 import { RepoList } from "../RepoList";
 
-import { useFetch } from "../../../utils";
+import { useFetchRepositoryList } from "./hooks";
+import { Pagination } from "../../generic";
 
-import { formatDataFromResponse } from "./helpers";
-
-import { ListReposType, RepoPanelProps } from "./types";
+import { RepoPanelProps } from "./types";
 
 export const RepoPanel: FC<RepoPanelProps> = ({ apiUrl }) => {
-  const { data, loading, error } = useFetch<ListReposType>(apiUrl);
+  const { repoListData, loading, error, queryState, setQueryState } =
+    useFetchRepositoryList(apiUrl);
 
-  const repoListData = useMemo(() => {
-    return formatDataFromResponse(data);
-  }, [data]);
+  const handlePageChange = (pageIncrease: number) => {
+    setQueryState((prev) => ({ ...prev, page: prev.page + pageIncrease }));
+  };
 
-  console.log(data, loading, error);
   if (loading) return <div>Loading...</div>;
 
   if (error) return <div>{error.toString()}</div>;
-  return <div>{repoListData && <RepoList data={repoListData} />}</div>;
+  return (
+    <div>
+      {repoListData && <RepoList data={repoListData} />}
+
+      <Pagination
+        currPage={queryState.page}
+        totalItems={queryState.total}
+        limitPerPage={queryState.per_page}
+        onClick={handlePageChange}
+      />
+    </div>
+  );
 };

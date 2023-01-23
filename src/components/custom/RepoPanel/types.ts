@@ -14,3 +14,10 @@ export type RepoListItemType = {
   ownerName: string;
   ownerAvatar: string;
 };
+
+export type RepoPanelQueryState = {
+  page: number;
+  per_page: number;
+  total: number;
+  sort: "stars" | "forks";
+};
