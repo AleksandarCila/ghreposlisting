@@ -7,6 +7,8 @@ import { useFetch } from "../../../utils";
 import { ListReposType } from "./types";
 import { RepoListItem } from "./components";
 
+import { Pagination } from "../../generic";
+
 type RepoListProps = {
   apiUrl: string;
 };
@@ -18,22 +20,26 @@ export const RepoList: FC<RepoListProps> = ({ apiUrl }) => {
     return formatDataFromResponse(data);
   }, [data]);
 
-  console.log(repoListData, loading, error);
+  console.log(data, loading, error);
   if (loading) return <div>Loading...</div>;
 
   if (error) return <div>{error}</div>;
 
   return (
     <div>
-      {repoListData &&
-        repoListData.map((repoListItem) => {
-          return (
-            <RepoListItem
-              key={`${repoListItem.name}-${repoListItem.ownerName}`}
-              item={repoListItem}
-            />
-          );
-        })}
+      {data && repoListData && (
+        <>
+          {repoListData.map((repoListItem) => {
+            return (
+              <RepoListItem
+                key={`${repoListItem.name}-${repoListItem.ownerName}`}
+                item={repoListItem}
+              />
+            );
+          })}
+          <Pagination totalItems={data?.total_count} limitPerPage={30}/>
+        </>
+      )}
     </div>
   );
 };
