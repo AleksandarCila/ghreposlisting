@@ -1,8 +1,8 @@
 import { FC } from "react";
 
-import { PageButton,PaginationInfo } from "./components";
+import { PageButton, PaginationInfo } from "./components";
 
-import './Pagination.styles.css'
+import "./Pagination.styles.css";
 
 type PaginationProps = {
   currPage: number;
@@ -26,17 +26,17 @@ export const Pagination: FC<PaginationProps> = ({
   const handleNextPage = () => {
     onClick(+1);
   };
-  
+
   return (
     <div className="pagination">
       <PageButton
-        label="〈 Previous Page "
+        label="〈"
         disabled={currPage === 1}
         onClick={handlePreviousPage}
       />
-      <PaginationInfo page={currPage} totalPages={numberOfPages}/>
+      <PaginationInfo page={currPage} totalPages={numberOfPages} />
       <PageButton
-        label="Next Page 〉"
+        label="〉"
         disabled={currPage === numberOfPages}
         onClick={handleNextPage}
       />

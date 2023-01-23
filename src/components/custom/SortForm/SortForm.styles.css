@@ -1,5 +1,6 @@
 .sort-form {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-end;
+    padding: 15px 0px; 
 }

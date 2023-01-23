@@ -19,7 +19,7 @@ export const SortForm: FC<SortFormProps> = ({ sort, onChange }) => {
 
   return (
     <div className="sort-form">
-      <p>Sort by: </p>
+      <span>Sort descending by: </span>
       <RadioButton
         name="stars"
         id="stars"

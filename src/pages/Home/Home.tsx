@@ -1,8 +1,10 @@
 import { RepoPanel, Tabs } from "../../components";
 
+import './Home.styles.css'
+
 export const Home = () => {
   return (
-    <div style={{ width: 800, maxWidth:"100%" }}>
+    <div className="page-container">
       <Tabs defaultValue="react">
         <Tabs.TabButtons>
           <Tabs.Tab label="react">React</Tabs.Tab>

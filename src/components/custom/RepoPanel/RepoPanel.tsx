@@ -8,6 +8,8 @@ import { Pagination } from "../../generic";
 
 import { RepoPanelProps, RepoPanelQueryState } from "./types";
 
+import "./RepoPanel.styles.css";
+
 export const RepoPanel: FC<RepoPanelProps> = ({ apiUrl }) => {
   const { repoListData, loading, error, queryState, setQueryState } =
     useFetchRepositoryList(apiUrl);
@@ -20,18 +22,22 @@ export const RepoPanel: FC<RepoPanelProps> = ({ apiUrl }) => {
     setQueryState((prev) => ({ ...prev, sort: newSort }));
   };
 
-  
   return (
-    <div>
+    <div className="panel-container">
       <SortForm sort={queryState.sort} onChange={handleSortChange} />
+      <hr />
+
       <RepoList data={repoListData} error={error} loading={loading} />
 
-      <Pagination
-        currPage={queryState.page}
-        totalItems={queryState.total}
-        limitPerPage={queryState.per_page}
-        onClick={handlePageChange}
-      />
+      <hr />
+      {!error && !loading && (
+        <Pagination
+          currPage={queryState.page}
+          totalItems={queryState.total}
+          limitPerPage={queryState.per_page}
+          onClick={handlePageChange}
+        />
+      )}
     </div>
   );
 };
