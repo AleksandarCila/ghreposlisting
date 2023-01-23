@@ -1,4 +1,16 @@
 
 .tab {
-    padding:5px,
+    padding:5px;
+    border:1px solid black;
+    width:100%;
+}
+
+.tab:hover{
+    cursor:pointer;
+    background-color: beige;
+}
+
+.active {
+    color:green;
+    background-color: antiquewhite;
 }

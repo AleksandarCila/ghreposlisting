@@ -2,7 +2,7 @@ import { RepoList, Tabs } from "../../components";
 
 export const Home = () => {
   return (
-    <div>
+    <div style={{width:800}}>
       <Tabs defaultValue="react">
         <Tabs.TabButtons>
           <Tabs.Tab label="react">React</Tabs.Tab>

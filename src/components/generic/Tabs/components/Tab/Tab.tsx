@@ -1,16 +1,21 @@
 import * as React from "react";
 import { useTabs } from "../../hooks";
 
+import "./Tab.styles.css";
+
 export type TabProps = {
   label: string;
   children?: React.ReactNode;
 };
 
 export const Tab: React.FC<TabProps> = ({ label, children }) => {
-  const { setActiveTab } = useTabs();
+  const { activeTab, setActiveTab } = useTabs();
+
+  const isActive = activeTab === label ? "active" : "";
+
   return (
-    <div className="tab">
-      <button onClick={() => setActiveTab(label)}>{children}</button>
+    <div className={`tab ${isActive}`} onClick={() => setActiveTab(label)}>
+      {children}
     </div>
   );
 };
