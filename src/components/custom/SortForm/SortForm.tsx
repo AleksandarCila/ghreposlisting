@@ -1,6 +1,6 @@
 import { FC, ChangeEvent } from "react";
 
-import { RadioButton } from "../../generic/RadioButton";
+import { RadioButton } from "../../generic";
 import { RepoPanelQueryState } from "../RepoPanel/types";
 
 import "./SortForm.styles.css";

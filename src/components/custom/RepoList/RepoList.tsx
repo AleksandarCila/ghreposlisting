@@ -1,6 +1,7 @@
 import { FC } from "react";
 
 import { RepoListItem } from "./components";
+import { Spinner } from "../../generic";
 
 import { RepoListItemType } from "../RepoPanel/types";
 
@@ -11,7 +12,7 @@ type RepoListProps = {
 };
 
 export const RepoList: FC<RepoListProps> = ({ data, error, loading }) => {
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Spinner />;
 
   if (error) return <div>{error.toString()}</div>;
 
