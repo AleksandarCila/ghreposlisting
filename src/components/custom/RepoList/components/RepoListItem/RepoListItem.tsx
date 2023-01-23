@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import "./RepoListItem.styles.css";
 
-import { RepoListItemType } from "../../types";
+import { RepoListItemType } from "../../../RepoPanel/types";
 
 type RepoListItemProps = {
   item: RepoListItemType;
