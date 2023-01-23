@@ -1,17 +1,11 @@
 import * as React from "react";
-import { Tab, TabProps, Panel, PanelProps } from "./components";
+import { Tab, Panel, TabButtons } from "./components";
+
+import { TabsProps, TabsComposition } from "./types";
 
 import { TabsContext, TabsContextType } from "./context";
 
-type TabsComposition = {
-  Tab: React.FC<TabProps>;
-  Panel: React.FC<PanelProps>;
-};
-
-type TabsProps = {
-  defaultValue: string;
-  children?: React.ReactNode;
-};
+import "./Tabs.styles.css";
 
 const Tabs: React.FC<TabsProps> & TabsComposition = ({
   defaultValue,
@@ -29,12 +23,13 @@ const Tabs: React.FC<TabsProps> & TabsComposition = ({
 
   return (
     <TabsContext.Provider value={memoizedContextValue}>
-      {children}
+      <div>{children}</div>
     </TabsContext.Provider>
   );
 };
 
 Tabs.Tab = Tab;
 Tabs.Panel = Panel;
+Tabs.TabButtons = TabButtons;
 
 export { Tabs };

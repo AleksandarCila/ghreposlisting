@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useTabs } from "../hooks";
+import { useTabs } from "../../hooks";
 
 export type PanelProps = {
   label: string;

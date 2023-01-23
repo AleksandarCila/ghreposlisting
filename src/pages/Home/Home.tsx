@@ -4,10 +4,11 @@ export const Home = () => {
   return (
     <div>
       <Tabs defaultValue="react">
-        <Tabs.Tab label="react">React</Tabs.Tab>
-        <Tabs.Tab label="vue">Vue</Tabs.Tab>
-        <Tabs.Tab label="angular">Angular</Tabs.Tab>
-
+        <Tabs.TabButtons>
+          <Tabs.Tab label="react">React</Tabs.Tab>
+          <Tabs.Tab label="vue">Vue</Tabs.Tab>
+          <Tabs.Tab label="angular">Angular</Tabs.Tab>
+        </Tabs.TabButtons>
         <Tabs.Panel label="react">
           React
           <RepoList apiUrl="https://api.github.com/search/repositories?q=React" />
