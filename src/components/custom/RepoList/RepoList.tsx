@@ -5,6 +5,7 @@ import { formatDataFromResponse } from "./helpers";
 import { useFetch } from "../../../utils";
 
 import { ListReposType } from "./types";
+import { RepoListItem } from "./components";
 
 type RepoListProps = {
   apiUrl: string;
@@ -18,5 +19,21 @@ export const RepoList: FC<RepoListProps> = ({ apiUrl }) => {
   }, [data]);
 
   console.log(repoListData, loading, error);
-  return <div>RepoList</div>;
+  if (loading) return <div>Loading...</div>;
+
+  if (error) return <div>{error}</div>;
+
+  return (
+    <div>
+      {repoListData &&
+        repoListData.map((repoListItem) => {
+          return (
+            <RepoListItem
+              key={`${repoListItem.name}-${repoListItem.ownerName}`}
+              item={repoListItem}
+            />
+          );
+        })}
+    </div>
+  );
 };
