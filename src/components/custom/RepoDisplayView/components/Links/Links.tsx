@@ -16,9 +16,9 @@ export const Links: FC<LinksProps> = ({ gitHubUrl, webUrl }) => {
       <a href={gitHubUrl}>
         <AiFillGithub />
       </a>
-      <a href={webUrl}>
+      {webUrl && <a href={webUrl}>
         <RiExternalLinkLine />
-      </a>
+      </a>}
     </div>
   );
 };

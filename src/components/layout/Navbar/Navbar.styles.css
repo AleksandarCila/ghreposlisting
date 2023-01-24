@@ -1,10 +1,10 @@
 .nav {
     padding:20px;
-    background-color: gainsboro;
+    background-color: lavender;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    
+    box-shadow: 1px 2px #f4b40020;
 }
 
 .logo {

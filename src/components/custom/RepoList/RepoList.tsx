@@ -17,19 +17,16 @@ export const RepoList: FC<RepoListProps> = ({ data, error, loading }) => {
   if (error) return <div>{error.toString()}</div>;
 
   return (
-    <div>
-      {data && (
-        <>
-          {data.map((repoListItem) => {
-            return (
-              <RepoListItem
-                key={`${repoListItem.name}-${repoListItem.ownerName}`}
-                item={repoListItem}
-              />
-            );
-          })}
-        </>
-      )}
-    </div>
+    <>
+      {data &&
+        data.map((repoListItem) => {
+          return (
+            <RepoListItem
+              key={`${repoListItem.name}-${repoListItem.ownerName}`}
+              item={repoListItem}
+            />
+          );
+        })}
+    </>
   );
 };
