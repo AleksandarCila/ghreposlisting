@@ -8,6 +8,8 @@
     padding: 10px;
     border:1px solid lightgoldenrodyellow;
     margin:10px 0px;
+    box-shadow: 2px 2px #f4b40020;
+
 }
 
 .contributor-item .details{
