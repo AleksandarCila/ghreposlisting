@@ -1,10 +1,8 @@
-import { RepoPanel, Tabs } from "../../components";
-
-import './Home.styles.css'
+import { RepoPanel, Tabs, Layout } from "../../components";
 
 export const Home = () => {
   return (
-    <div className="page-container">
+    <Layout>
       <Tabs defaultValue="react">
         <Tabs.TabButtons>
           <Tabs.Tab label="react">React</Tabs.Tab>
@@ -21,6 +19,6 @@ export const Home = () => {
           <RepoPanel apiUrl="https://api.github.com/search/repositories?q=Angular" />
         </Tabs.Panel>
       </Tabs>
-    </div>
+    </Layout>
   );
 };

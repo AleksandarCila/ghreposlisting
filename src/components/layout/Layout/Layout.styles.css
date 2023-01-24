@@ -1,0 +1,13 @@
+.App {
+    text-align: center;
+    flex-direction: column;
+    display:flex;
+    justify-content: center;
+    width:100%;
+  }
+
+  .page-container {
+    width:800px;
+    max-width: 100%;
+    align-self: center;
+}

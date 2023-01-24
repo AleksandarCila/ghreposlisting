@@ -1,0 +1,19 @@
+.nav {
+    padding:20px;
+    background-color: gainsboro;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.logo {
+    font-style: italic;
+}
+
+.link {
+    text-decoration: none;
+    margin-left:10px;
+    font-weight: bold;
+    color:#f4b400;
+}
