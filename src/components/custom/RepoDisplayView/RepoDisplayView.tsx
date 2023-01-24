@@ -1,5 +1,5 @@
 import React from "react";
-import { Languages, RepoMainDetails } from "./components";
+import { Languages, RepoMainDetails,Contributors } from "./components";
 import { Spinner } from "../../generic";
 
 import { useGetRepositoryData } from "./hooks";
@@ -27,6 +27,8 @@ export const RepoDisplayView = () => {
       <div>Open Issues: {data.openIssues}</div>
       <hr/>
       <Languages languages={data.languages}/>
+      <hr/>
+      <Contributors contributors={data.contributors}/>
     </div>
   );
 };
