@@ -1,2 +1,5 @@
 export * from './formatEndpointData'
 export * from './getPercentageOfUsedLanguage'
+export * from './fetchLanguages'
+export * from './fetchContributors'
+export * from './fetchRepository'

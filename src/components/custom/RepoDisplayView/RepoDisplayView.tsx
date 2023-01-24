@@ -2,12 +2,12 @@ import React from "react";
 import { Languages, RepoMainDetails } from "./components";
 import { Spinner } from "../../generic";
 
-import { useFetchRepository } from "./hooks";
+import { useGetRepositoryData } from "./hooks";
 
 import "./RepoDisplayView.styles.css";
 
 export const RepoDisplayView = () => {
-  const { repoData: data, error, loading } = useFetchRepository();
+  const { data, error, loading } = useGetRepositoryData();
 
   if (loading) return <Spinner />;
 

@@ -4,13 +4,16 @@ import {
   RepoEndpointType,
   RepoDataDisplayType,
   LanguagesEndpointType,
+  ContributorsEndpointType
 } from "./../types";
 
 export const formatEndpointData = (
   data: RepoEndpointType | undefined,
-  languages: LanguagesEndpointType | undefined
+  languages: LanguagesEndpointType | undefined,
+  contributors: ContributorsEndpointType | undefined,
 ): RepoDataDisplayType | undefined => {
   if (!data) return undefined;
+  
   const languagesPercentage = getPercantageOfUsedLanguages(languages);
 
   return {
@@ -21,6 +24,6 @@ export const formatEndpointData = (
     forks: data.forks_count,
     openIssues: data.open_issues_count,
     languages: languagesPercentage,
-    contributors: [],
+    contributors: contributors || [],
   };
 };

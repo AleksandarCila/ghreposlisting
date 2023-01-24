@@ -1,2 +1,1 @@
-export * from './useFetchRepository'
-export * from './useGetRepoDisplayData'
+export * from './useGetRepositoryData'

@@ -20,5 +20,5 @@ export type RepoDataDisplayType = {
     name: string;
     percentage: string;
   }[];
-  contributors: ContributorsEndpointType[];
+  contributors: ContributorsEndpointType;
 };
