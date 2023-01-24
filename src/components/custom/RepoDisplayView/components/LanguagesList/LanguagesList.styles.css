@@ -1,0 +1,21 @@
+
+.languagesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.languageList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.languageList div {
+    border-radius: 25px;
+    background-color: #f4b400;
+    padding: 5px 20px;
+    margin: 8px;
+}

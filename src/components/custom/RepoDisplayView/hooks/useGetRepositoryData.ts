@@ -27,7 +27,7 @@ export const useGetRepositoryData = () => {
         const languages = await fetchLanguages(url);
         const contributors = await fetchContributors(url);
         const repoData = await fetchRepository(url);
-
+        
         const data = formatEndpointData(repoData, languages, contributors);
 
         setData(data);

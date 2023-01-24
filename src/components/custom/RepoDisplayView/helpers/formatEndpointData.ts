@@ -23,6 +23,8 @@ export const formatEndpointData = (
     stars: data.stargazers_count,
     forks: data.forks_count,
     openIssues: data.open_issues_count,
+    gitHubUrl:data.html_url,
+    webUrl:data.homepage || "",
     languages: languagesPercentage,
     contributors: contributors || [],
   };

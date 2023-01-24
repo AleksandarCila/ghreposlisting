@@ -1,0 +1,36 @@
+
+
+
+.contributor-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border:1px solid lightgoldenrodyellow;
+    margin:10px 0px;
+}
+
+.contributor-item .details{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.contributor-item .details > *{
+    margin:10px
+}
+
+.contributor-item img{
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.contributor-item a {
+    font-size:25px;
+    color:#f4b400;
+}
+
+.contributor-item a:hover {
+    color:#f4b400a0;
+}

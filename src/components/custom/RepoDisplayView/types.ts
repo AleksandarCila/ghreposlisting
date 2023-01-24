@@ -16,6 +16,8 @@ export type RepoDataDisplayType = {
   stars: number;
   forks: number;
   openIssues: number;
+  gitHubUrl:string,
+  webUrl:string,
   languages: {
     name: string;
     percentage: string;

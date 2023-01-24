@@ -1,0 +1,9 @@
+.links a{
+    color:#f4b400;
+    font-size: 40px;
+    padding: 5px;
+}
+
+.links a:hover{
+    color: #f4b400a0;
+}

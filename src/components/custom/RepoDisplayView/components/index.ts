@@ -1,3 +1,3 @@
 export * from './RepoMainDetails'
-export * from './Languages'
+export * from './LanguagesList'
 export * from './Contributors'

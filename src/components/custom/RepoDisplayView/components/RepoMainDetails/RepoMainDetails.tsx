@@ -1,6 +1,8 @@
 import { FC } from "react";
 
-import "../RepoDisplayView.styles.css";
+import { Links } from "../Links";
+
+import "./RepoMainDetails.styles.css";
 
 type RepoMainDetailsProps = {
   repoName: string;
@@ -8,6 +10,8 @@ type RepoMainDetailsProps = {
   ownerAvatar: string;
   stars: number;
   forks: number;
+  gitHubUrl: string;
+  webUrl: string;
 };
 
 export const RepoMainDetails: FC<RepoMainDetailsProps> = ({
@@ -16,6 +20,8 @@ export const RepoMainDetails: FC<RepoMainDetailsProps> = ({
   ownerAvatar,
   stars,
   forks,
+  gitHubUrl,
+  webUrl,
 }) => {
   return (
     <div className="repoMainDetails">
@@ -36,6 +42,7 @@ export const RepoMainDetails: FC<RepoMainDetailsProps> = ({
           {stars.toLocaleString("en-US")}
         </div>
       </div>
+      <Links gitHubUrl={gitHubUrl} webUrl={webUrl} />
     </div>
   );
 };

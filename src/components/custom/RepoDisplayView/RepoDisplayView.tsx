@@ -1,5 +1,5 @@
 import React from "react";
-import { Languages, RepoMainDetails,Contributors } from "./components";
+import { LanguagesList, RepoMainDetails,Contributors } from "./components";
 import { Spinner } from "../../generic";
 
 import { useGetRepositoryData } from "./hooks";
@@ -13,7 +13,6 @@ export const RepoDisplayView = () => {
 
   if (error || !data) return <div>{error}</div>;
 
-  console.log(data);
   return (
     <div className="repoDisplayContainer">
       <RepoMainDetails
@@ -22,11 +21,13 @@ export const RepoDisplayView = () => {
         ownerAvatar={data.ownerAvatar}
         stars={data.stars}
         forks={data.forks}
+        gitHubUrl={data.gitHubUrl}
+        webUrl={data.webUrl}
       />
       <hr />
       <div>Open Issues: {data.openIssues}</div>
       <hr/>
-      <Languages languages={data.languages}/>
+      <LanguagesList languages={data.languages}/>
       <hr/>
       <Contributors contributors={data.contributors}/>
     </div>
