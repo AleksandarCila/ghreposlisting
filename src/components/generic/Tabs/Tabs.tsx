@@ -1,4 +1,6 @@
 import * as React from "react";
+import { useSearchParams } from "react-router-dom";
+
 import { Tab, Panel, TabButtons } from "./components";
 
 import { TabsProps, TabsComposition } from "./types";
@@ -11,14 +13,22 @@ const Tabs: React.FC<TabsProps> & TabsComposition = ({
   defaultValue,
   children,
 }) => {
+  const [search,setSearch] = useSearchParams();
   const [activeTab, setActiveTab] = React.useState(defaultValue);
+
+  const handleTabChange = React.useCallback((newTab:string) => {
+    const newParams = new URLSearchParams(search);
+    newParams.set('page','1');
+    setSearch(newParams)
+    setActiveTab(newTab);
+  },[setSearch,search,setActiveTab])
 
   const memoizedContextValue: TabsContextType = React.useMemo(
     () => ({
       activeTab,
-      setActiveTab,
+      setActiveTab:handleTabChange,
     }),
-    [activeTab, setActiveTab]
+    [activeTab, handleTabChange]
   );
 
   return (

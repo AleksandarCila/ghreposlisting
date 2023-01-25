@@ -15,8 +15,12 @@ export const PageButton: FC<PageButtonProps> = ({
 }) => {
   const isDisabled = disabled ? "disabled" : "";
   return (
-    <div className={`pageButton ${isDisabled}`} onClick={onClick}>
+    <button
+      className={`pageButton ${isDisabled}`}
+      disabled={disabled}
+      onClick={onClick}
+    >
       {label}
-    </div>
+    </button>
   );
 };
