@@ -1,4 +1,4 @@
-import * as React from "react";
+import { FC } from "react";
 import { useTabs } from "../../hooks";
 
 import "./Tab.styles.css";
@@ -8,7 +8,7 @@ export type TabProps = {
   children?: React.ReactNode;
 };
 
-export const Tab: React.FC<TabProps> = ({ label, children }) => {
+export const Tab: FC<TabProps> = ({ label, children }) => {
   const { activeTab, setActiveTab } = useTabs();
 
   const isActive = activeTab === label ? "active" : "";
