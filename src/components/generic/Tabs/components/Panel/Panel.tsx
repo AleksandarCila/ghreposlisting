@@ -1,4 +1,5 @@
 import { FC } from "react";
+
 import { useTabs } from "../../hooks";
 
 export type PanelProps = {

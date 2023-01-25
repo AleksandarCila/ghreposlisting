@@ -1,13 +1,14 @@
 import { useMemo, useEffect } from "react";
 
 import { useFetch } from "../../../../utils";
-import { useQueryParams } from "./useQueryParams";
+import { useStateFromURL } from "./useStateFromURL";
 import { formatDataFromResponse } from "../helpers";
 
 import { ListReposType } from "../types";
 
 export const useFetchRepositoryList = (baseUrl: string) => {
-  const { queryState, setQueryState, url: queryUrl } = useQueryParams(baseUrl);
+  const { queryState, setQueryState, url: queryUrl } = useStateFromURL(baseUrl);
+  
   const { data, loading, error } = useFetch<ListReposType>(queryUrl);
 
   const repoListData = useMemo(() => {

@@ -8,8 +8,6 @@ import { TabsProps, TabsComposition } from "./types";
 
 import { TabsContext, TabsContextType } from "./context";
 
-import "./Tabs.styles.css";
-
 const Tabs: FC<TabsProps> & TabsComposition = ({ defaultValue, children }) => {
   const [activeTab, setActiveTab] = useState(defaultValue);
 

@@ -25,11 +25,9 @@ export const RepoListItem: FC<RepoListItemProps> = ({ item }) => {
             {item.name}
           </div>
           <hr />
-          <div>
-            <div className="text">
-              <span>Owner: </span>
-              {item.ownerName}
-            </div>
+          <div className="text">
+            <span>Owner: </span>
+            {item.ownerName}
           </div>
           <div className="text">
             <span> 🍴 </span>

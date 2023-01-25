@@ -1,9 +1,9 @@
 import { FC } from "react";
 
+import { useFetchRepositoryList } from "./hooks";
+
 import { RepoList } from "../RepoList";
 import { SortForm } from "../SortForm";
-
-import { useFetchRepositoryList } from "./hooks";
 import { Pagination } from "../../generic";
 
 import { RepoPanelProps, RepoPanelQueryState } from "./types";

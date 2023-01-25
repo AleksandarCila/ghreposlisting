@@ -1,2 +1,2 @@
 export * from "./useFetchRepositoryList";
-export * from "./useQueryParams";
+export * from "./useStateFromURL";
